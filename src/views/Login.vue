@@ -88,6 +88,8 @@ const clearRegisterData = () => {
     rePassword: "",
   };
 };
+
+
 </script>
 
 <template>

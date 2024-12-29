@@ -1,3 +1,12 @@
+# 大事件项目-前端
+
+## TODO
+
+重置密码，修改文章，删除文章功能未完成
+
+
+------------------------------
+
 # 一、环境准备
 
 ### 1.1 创建vue工程(big-event)
@@ -1479,7 +1488,7 @@ const onCurrentChange = (num) => {
         <!-- 搜索表单 -->
         <el-form inline>
             <el-form-item label="文章分类：">
-                <el-select placeholder="请选择" v-model="categoryId">
+                <el-select placeholder="请选择" v-model="categoryId" style="width: 240px">
                     <el-option 
                         v-for="c in categorys" 
                         :key="c.id" 
@@ -1490,7 +1499,7 @@ const onCurrentChange = (num) => {
             </el-form-item>
 
             <el-form-item label="发布状态：">
-                <el-select placeholder="请选择" v-model="state">
+                <el-select placeholder="请选择" v-model="state" style="width: 240px">
                     <el-option label="已发布" value="已发布"></el-option>
                     <el-option label="草稿" value="草稿"></el-option>
                 </el-select>
@@ -2185,7 +2194,7 @@ const imgUrl= avatar
                     :show-file-list="false"
                     >
                     <img v-if="imgUrl" :src="imgUrl" class="avatar" />
-                    <img v-else src="avatar" width="278" />
+                    <img v-else :src="avatar" width="278" />
                 </el-upload>
                 <br />
                 <el-button type="primary" :icon="Plus" size="large"  @click="uploadRef.$el.querySelector('input').click()">
