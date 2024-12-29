@@ -38,3 +38,8 @@ export const userAvatarUpdateService = (avatarUrl)=>{
     return request.patch('/user/updateAvatar',params)
 
 }
+
+// 修改密码
+export const userUpdatePasswordService = (passwordData)=>{
+    return  request.patch('/user/updatePwd',passwordData)
+}
