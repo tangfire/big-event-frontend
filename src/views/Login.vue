@@ -58,6 +58,8 @@ const register = async () => {
 // 登录函数
 
 import { useRouter } from "vue-router";
+import { useTokenStore } from "@/stores/token.js";
+const tokenStore = useTokenStore();
 const router = useRouter();
 
 const login = async () => {
@@ -70,6 +72,9 @@ const login = async () => {
   //   }
   //   alert(result.msg ? result.msg : "登录成功");
   ElMessage.success(result.msg ? result.msg : "登录成功");
+
+  // 把得到的token存储到pinia中
+  tokenStore.setToken(result.data);
 
   // 跳转到首页   路由完成跳转
   router.push("/");
